@@ -1,0 +1,12 @@
+---
+services:
+  pydoit:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: pydoit
+    container_name: pydoit
+    network_mode: host
+    volumes:
+      - ./todo.list:/app/todo.list
+    restart: unless-stopped

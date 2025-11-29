@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>PiDoIt</title>
+</head>
+<body>
+
+<div class="grid-container">
+	<div></div>
+	<div>
+		<h1>PyDoIt</h1>
+	</div>
+	<div></div>
+
+	<div></div>
+	<div class="flex-container">
+	    {% for key, item in todo_items.items() | sort(attribute='1.seconds_remaining') %}
+	        <div class="item">
+				<h3>{{ item.name }}</h3>
+				<p>Last completed: {{ item.last.strftime('%m/%d/%y') }}</p>
+				<p>Due: {{ item.next.strftime('%m/%d/%y') }}</p>
+				{% if item.progress < 33 %}
+				<progress class="good" value="{{ item.progress }}" max="100">{{ item.progress}}</progress>
+				{% elif 33 <= item.progress < 66 %}
+				<progress class="warning" value="{{ item.progress }}" max="100">{{ item.progress}}</progress>
+				{% elif 66 <= item.progress %}
+				<progress class="overdue" value="{{ item.progress }}" max="100">{{ item.progress}}</progress>
+				{% else %}
+				<progress value="{{ item.progress }}" max="100">{{ item.progress}}</progress>
+				{% endif %}
+				<a href="/update/{{ item.id }}">Mark Complete</a>
+			</div>
+	    {% endfor %}
+	</div>
+	<div></div>
+
+	<div></div>
+	<div></div>
+	<div></div>
+
+
+</div>
+</body>
+</html>

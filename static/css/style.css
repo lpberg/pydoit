@@ -1,0 +1,54 @@
+:root {
+	--overdue:#cc3232;
+	--warning: #e7b416;
+	--good: #2dc937;
+	--bodybg: #EEF2F6;
+}
+
+* {
+	font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+body {
+	background-color: var(--bodybg);
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: 1fr 8fr 1fr;
+}
+
+.flex-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2rem;
+}
+
+.flex-container .item {
+	flex-basis: 300px;
+	padding: 25px;
+/*	flex: 1;*/
+	background-color: white;
+	border: 1px solid gray;
+	box-shadow: 0 4px 4px 0 rgba(0,0,0,0.1);
+}
+
+.flex-container .item h3 {
+	margin-top: 0px;
+}
+
+progress {
+	min-width: 100%;
+}
+
+progress.overdue {
+	accent-color: var(--overdue);
+}
+
+progress.warning {
+	accent-color: var(--warning);
+}
+
+progress.good {
+	accent-color: var(--good);
+}
