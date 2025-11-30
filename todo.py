@@ -55,6 +55,10 @@ class TodoList:
 		for item in self.data:
 			if "id" not in item:
 				item["id"] = uuid.uuid4()
+			if "last" not in item:
+				item["last"] = str(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+			if "frequency" not in item:
+				item["frequency"] = "weekly"
 			self.items[item["id"]] = TodoItem(item)
 		self.writeToFile()
 

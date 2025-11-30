@@ -19,7 +19,7 @@
 	        <div class="item">
 				<h3>{{ item.name }}</h3>
 				<p>Last completed: {{ item.last.strftime('%m/%d/%y') }}</p>
-				<p>Due: {{ item.next.strftime('%m/%d/%y') }}</p>
+				<p>Due: {{ item.next.strftime('%m/%d/%y') }} ({{ (item.seconds_remaining / 86400) | round | int}} days left)</p>
 				{% if item.progress < 33 %}
 				<progress class="good" value="{{ item.progress }}" max="100">{{ item.progress}}</progress>
 				{% elif 33 <= item.progress < 66 %}
