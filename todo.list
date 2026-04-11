@@ -1,0 +1,14 @@
+[
+    {
+        "id": "502f3519-86cd-430f-8a39-b7bbe9790e1f",
+        "name": "Check Salt Level in Water Softener. Add if needed",
+        "last": "2025-11-30 18:31:34",
+        "frequency": "monthly"
+    },
+    {
+        "id": "5860e080-71bb-467a-acfe-1e2829af36af",
+        "name": "Clean out Dishwasher Food Trap ",
+        "last": "2025-11-30 18:31:33",
+        "frequency": "weekly"
+    }
+]
