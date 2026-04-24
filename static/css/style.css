@@ -18,6 +18,14 @@ body {
 	grid-template-columns: 1fr 8fr 1fr;
 }
 
+.flex-nav {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	margin-top: 1rem;
+	margin-bottom: 2rem;
+}
+
 .flex-container {
 	display: flex;
 	flex-wrap: wrap;

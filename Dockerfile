@@ -4,6 +4,7 @@ FROM python:3.10-slim-buster
 ENV FLASK_APP=app.py
 
 RUN mkdir /app
+RUN mkdir /app/lists
 
 WORKDIR /app
 

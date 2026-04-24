@@ -14,6 +14,15 @@
 	<div></div>
 
 	<div></div>
+	<div class="flex-nav">
+		{% for name in list_names %}
+			<a href="/{{ name }}">{{ name}}</a>
+		{% endfor %}
+	</div>
+	<div></div>
+
+
+	<div></div>
 	<div class="flex-container">
 	    {% for key, item in todo_items.items() | sort(attribute='1.seconds_remaining') %}
 	        <div class="item">
@@ -35,7 +44,7 @@
 				{% else %}
 				<progress value="{{ item.progress }}" max="100">{{ item.progress}}</progress>
 				{% endif %}
-				<a href="/update/{{ item.id }}">Mark Complete</a>
+				<a href="/update/{{ list_name }}/{{ item.id }}">Mark Complete</a>
 			</div>
 	    {% endfor %}
 	</div>

@@ -8,5 +8,5 @@ services:
     container_name: pydoit
     network_mode: host
     volumes:
-      - ./todo.list:/app/todo.list
+      - ./lists:/app/lists
     restart: unless-stopped
