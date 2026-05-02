@@ -40,6 +40,23 @@ body {
 	box-shadow: 0 4px 4px 0 rgba(0,0,0,0.1);
 }
 
+.tag {
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.tag.selected {
+	color: white;
+	background-color: #708090;
+}
 
 /* Mobile styles */
 @media (max-width: 60px) {

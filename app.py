@@ -1,8 +1,9 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, session
 from todo import TodoList
 from pathlib import Path
 
 app = Flask(__name__)
+app.secret_key = 'your_very_secret_key'
 
 tls = TodoList(Path("lists").joinpath("tasks.list"))
 
@@ -14,6 +15,7 @@ def index():
 
 @app.route("/tag/<tag_name>", methods=["GET"])
 def tag(tag_name):
+    session['last_tag'] = tag_name
     return render_template(
         "index.html",
         tag_names=tls.getTags(),
@@ -22,10 +24,10 @@ def tag(tag_name):
     )
 
 
-@app.route("/update/<tag>/<id>", methods=["GET"])
-def update_item(tag, id):
+@app.route("/update/<id>", methods=["GET"])
+def update(id):
     tls.update(id)
-    return redirect("/tag/" + tag)
+    return redirect("/tag/" + session['last_tag'])
 
 
 if __name__ == "__main__":

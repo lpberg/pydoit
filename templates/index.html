@@ -17,7 +17,7 @@
 	<div></div>
 	<div class="flex-nav">
 		{% for name in tag_names %}
-			<a href="/tag/{{ name }}">{{ name}}</a>
+			<a class="tag {% if name == tag_name %}selected{% endif %}" href="/tag/{{ name }}">{{ name}}</a>
 		{% endfor %}
 	</div>
 	<div></div>
@@ -45,7 +45,7 @@
 				{% else %}
 				<progress value="{{ item.progress }}" max="100">{{ item.progress}}</progress>
 				{% endif %}
-				<a href="/update/{{ tag_name }}/{{ item.id }}">Mark Complete</a>
+				<a href="/update/{{ item.id }}">Mark Complete</a>
 			</div>
 	    {% endfor %}
 	</div>
