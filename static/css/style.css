@@ -3,6 +3,8 @@
 	--warning: #e7b416;
 	--good: #2dc937;
 	--bodybg: #EEF2F6;
+    --mark_btn: #4682B4;
+    --tag_selected: #708090;
 }
 
 * {
@@ -34,50 +36,36 @@ body {
 
 .flex-container .item {
 	flex-basis: 300px;
-	padding: 25px;
+	padding: 15px;
 	background-color: white;
-	border: 1px solid gray;
 	box-shadow: 0 4px 4px 0 rgba(0,0,0,0.1);
 }
 
-.tag {
-  background-color: white;
-  border: none;
-  color: black;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 8px;
+.pill {
+	background-color: white;
+	border: none;
+	color: black;
+	padding: 5px 10px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	margin: 1px 2px;
+	cursor: pointer;
+	border-radius: 8px;
 }
 
-.tag.selected {
+.flex-container .item .pill.complete_btn {
+	background-color: var(--mark_btn);
 	color: white;
-	background-color: #708090;
+	padding: 10px;
+	margin: 8px 0px 2px;
+	border-radius: 4px;
 }
 
-/* Mobile styles */
-@media (max-width: 60px) {
-    .grid-container {
-        grid-template-columns: 1fr; /* collapse grid to single column */
-    }
-
-    .flex-container {
-        flex-direction: column; /* stack items vertically */
-    }
-
-    .flex-container .item {
-        flex-basis: 100%; /* each item takes full width */
-    }
-
-    .flex-nav {
-        flex-direction: column; /* optional: stack nav links too */
-    }
+.pill.selected {
+	color: white;
+	background-color: var(--tag_selected);
 }
-
-
 
 .flex-container .item h3 {
 	margin-top: 0px;
