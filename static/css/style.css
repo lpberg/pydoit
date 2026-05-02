@@ -35,11 +35,32 @@ body {
 .flex-container .item {
 	flex-basis: 300px;
 	padding: 25px;
-/*	flex: 1;*/
 	background-color: white;
 	border: 1px solid gray;
 	box-shadow: 0 4px 4px 0 rgba(0,0,0,0.1);
 }
+
+
+/* Mobile styles */
+@media (max-width: 60px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* collapse grid to single column */
+    }
+
+    .flex-container {
+        flex-direction: column; /* stack items vertically */
+    }
+
+    .flex-container .item {
+        flex-basis: 100%; /* each item takes full width */
+    }
+
+    .flex-nav {
+        flex-direction: column; /* optional: stack nav links too */
+    }
+}
+
+
 
 .flex-container .item h3 {
 	margin-top: 0px;

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="icon" href="data:,">
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>PiDoIt</title>
 </head>
@@ -15,8 +16,8 @@
 
 	<div></div>
 	<div class="flex-nav">
-		{% for name in list_names %}
-			<a href="/{{ name }}">{{ name}}</a>
+		{% for name in tag_names %}
+			<a href="/tag/{{ name }}">{{ name}}</a>
 		{% endfor %}
 	</div>
 	<div></div>
@@ -44,7 +45,7 @@
 				{% else %}
 				<progress value="{{ item.progress }}" max="100">{{ item.progress}}</progress>
 				{% endif %}
-				<a href="/update/{{ list_name }}/{{ item.id }}">Mark Complete</a>
+				<a href="/update/{{ tag_name }}/{{ item.id }}">Mark Complete</a>
 			</div>
 	    {% endfor %}
 	</div>

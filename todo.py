@@ -10,6 +10,7 @@ class TodoItem:
             "hourly": 3600,
             "daily": 86400,
             "weekly": 604800,
+            "biweekly": 604800 * 2,
             "monthly": 2628000,
             "quarterly": 2628000 * 3,
             "biannually": 2628000 * 6,
@@ -17,6 +18,7 @@ class TodoItem:
         }
         self.id = data["id"]
         self.name = data["name"]
+        self.tags = data["tags"]
         self.last = datetime.strptime(data["last"], "%Y-%m-%d %H:%M:%S")
         self.frequency = data["frequency"]
         self.frequency_seconds = timedelta(
@@ -40,6 +42,7 @@ class TodoItem:
         json = {}
         json["id"] = str(self.id)
         json["name"] = self.name
+        json["tags"] = self.tags
         json["last"] = self.last.strftime("%Y-%m-%d %H:%M:%S")
         json["frequency"] = self.frequency
         if ui:
@@ -63,13 +66,31 @@ class TodoList:
                 item["last"] = str(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
             if "frequency" not in item:
                 item["frequency"] = "weekly"
+            if "tags" not in item:
+                item["tags"] = []
+            if "all" not in item["tags"]:
+                item["tags"].append("all")
             self.items[item["id"]] = TodoItem(item)
         self.writeToFile()
+
+    def getTags(self):
+        tags = set()
+        for item in self.items:
+            for tag in self.items[item].tags:
+                tags.add(tag)
+        return list(tags)
 
     def getItems(self):
         data = {}
         for idx, obj in self.items.items():
             data[idx] = obj.getData()
+        return data
+
+    def getItemsByTag(self, tag):
+        data = {}
+        for idx, obj in self.items.items():
+            if tag in obj.tags:
+                data[idx] = obj.getData()
         return data
 
     def update(self, item_id):
