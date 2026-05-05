@@ -78,7 +78,7 @@ class TodoList:
         for item in self.items:
             for tag in self.items[item].tags:
                 tags.add(tag)
-        return list(tags)
+        return sorted(list(tags))
 
     def getItems(self):
         data = {}
