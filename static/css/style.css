@@ -41,6 +41,10 @@ body {
 	box-shadow: 0 4px 4px 0 rgba(0,0,0,0.1);
 }
 
+.flex-container .item h3 {
+	margin-top: 0px;
+}
+
 .pill {
 	background-color: white;
 	border: none;
@@ -54,21 +58,18 @@ body {
 	border-radius: 8px;
 }
 
-.flex-container .item .pill.complete_btn {
-	background-color: var(--mark_btn);
-	color: white;
-	padding: 10px;
-	margin: 8px 0px 2px;
-	border-radius: 4px;
-}
-
 .pill.selected {
 	color: white;
 	background-color: var(--tag_selected);
 }
 
-.flex-container .item h3 {
-	margin-top: 0px;
+.flex-container .item .pill.complete_btn {
+	background-color: var(--mark_btn);
+	display: block;
+	color: white;
+	padding: 10px;
+	margin: 8px 0px 2px;
+	border-radius: 4px;
 }
 
 progress {
