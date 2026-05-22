@@ -1,0 +1,35 @@
+[
+    {
+        "id": "69133f7a-0a4d-4fc7-ba72-b22aab6d1d8e",
+        "name": "Clean out cars.",
+        "tags": [
+            "all",
+            "garage",
+            "weekly"
+        ],
+        "last": "2026-05-22 14:49:00",
+        "frequency": "weekly"
+    },
+    {
+        "id": "8eba9222-66ac-452e-ae44-de81327c0d2a",
+        "name": "Clean Kitchen Counters",
+        "tags": [
+            "all",
+            "kitchen",
+            "daily"
+        ],
+        "last": "2026-05-22 14:49:00",
+        "frequency": "daily"
+    },
+    {
+        "id": "e0f92eb5-048e-40fa-8832-15b8bebad92d",
+        "name": "Weed Garden Bed",
+        "tags": [
+            "outdoors",
+            "monthly",
+            "all"
+        ],
+        "last": "2026-05-22 14:49:00",
+        "frequency": "monthly"
+    }
+]

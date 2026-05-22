@@ -5,7 +5,7 @@ PyDoIt is a lightweight Flask application for tracking frequently completed task
 ## Features
 - Simple, file-based task storage 
 - Tracks task name, last completed timestamp, and frequency 
-- Supports recurring intervals such as **hourly**, **daily**, **weekly**, **monthly**, **quarterly**, **biannually**, and **annually**
+- Supports recurring intervals such as **hourly**, **daily**, **biweekly**, **weekly**, **monthly**, **quarterly**, **biannually**, and **annually**
 - Minimal setup — no database required
 
 ## Screenshot
@@ -14,11 +14,11 @@ PyDoIt is a lightweight Flask application for tracking frequently completed task
 ## Requirements
 - Python 3.9+ 
 - Flask 
-- A task definition file named **todo.list**
+- A task definition file named **lists/tasks..list**
 
 ## Task File Format
 
-PyDoIt reads tasks from a `todo.list` file in a JSON array format.
+PyDoIt reads tasks from a `tasks.list` file in a JSON array format.
 Each task must include:
 
 - `name` — The task description
@@ -32,11 +32,11 @@ Each task must include:
   {
     "name": "Clean out Dishwasher Food Trap",
     "last": "2025-11-29 16:43:55",
+  	"tags": [
+            "all",
+            "kitchen",
+            "weekly"
+    ],
     "frequency": "weekly"
-  },
-  {
-    "name": "Wash Car",
-    "last": "2025-10-29 00:00:00",
-    "frequency": "quarterly"
   }
 ]
