@@ -3,18 +3,21 @@
 PyDoIt is a lightweight Flask application for tracking frequently completed tasks. It helps you keep an organized list of recurring chores or maintenance items, along with the last time they were completed and how often they should be repeated.
 
 ## Features
-- Simple, file-based task storage 
-- Tracks task name, last completed timestamp, and frequency 
+
+- Simple, file-based task storage
+- Tracks task name, last completed timestamp, and frequency
 - Supports recurring intervals such as **hourly**, **daily**, **biweekly**, **weekly**, **monthly**, **quarterly**, **biannually**, and **annually**
 - Minimal setup — no database required
 
 ## Screenshot
+
 ![PyDoIt Screenshot](static/images/pydoit_screenshot.png)
 
 ## Requirements
-- Python 3.9+ 
-- Flask 
-- A task definition file named **lists/tasks..list**
+
+- Python 3.9+
+- Flask
+- A task definition file named **lists/tasks.list**
 
 ## Task File Format
 
