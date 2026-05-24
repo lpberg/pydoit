@@ -6,7 +6,9 @@ services:
       dockerfile: Dockerfile
     image: pydoit
     container_name: pydoit
-    network_mode: host
+    ports:
+      - 5006:5006
+    # network_mode: host
     volumes:
-      - ./lists:/app/lists
+      - ./lists:/app/lists:rw
     restart: unless-stopped
